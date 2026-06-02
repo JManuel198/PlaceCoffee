@@ -114,3 +114,79 @@ button {
     text-decoration: underline;
 }
 
+/*-----------------------------------
+5. Layout - Navbar
+-------------------------------------*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__logo {
+    color: var(--color-text);
+    font-family: var(--font-title);
+    font-size: var(--text-md);
+    font-weight: 500;
+    padding: var(--space-xs) var(--space-md);
+}
+
+.navbar__links {
+    display: none; /*Ocultos en mobile*/
+}
+
+.navbar__cta {
+    display: none;
+}
+
+.navbar__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm);
+}
+
+/*Desktop*/
+@media(min-width: 1024px) {
+    .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    }
+
+    .navbar__links {
+        display: flex;
+        gap: var(--space-md);
+        flex: 1; /* ocupa un tercio */
+        justify-content: center;
+        font-weight: 500;
+    }
+
+    .navbar__logo {
+        flex: 1;
+        text-align: center;
+        padding: 0;
+    }
+
+    .navbar__cta {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar__links a:hover {
+        color: var(--color-accent);
+        text-decoration: underline;
+    }
+
+    .navbar__toggle {
+        display: none;
+    }
+}
+
+.navbar__toggle img {
+    width: 24px;
+    height: 24px;
+}
