@@ -95,3 +95,22 @@ button {
     font-family: inherit;
 }
 
+/*-----------------------------------
+4. Componentes reutilizables: botones, cards, badges.
+-------------------------------------*/
+.btn {
+    display: inline-block;
+    padding: var(--space-xxs) var(--space-md);
+    background-color: transparent;
+    color: var(--color-text);
+    border: solid 2px var(--color-accent);
+    border-radius: 2rem;
+    font-size: var(--text-base);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
