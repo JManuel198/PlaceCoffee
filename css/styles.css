@@ -1,0 +1,19 @@
+/*-----------------------------------
+1. Fuentes
+-------------------------------------*/
+@font-face {
+    font-family: 'Lora';
+    src: url(../assets/fonts/Lora/Lora-VariableFont_wght.ttf) format('truetype');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url(../assets/fonts/Satoshi_Complete/Fonts/TTF/Satoshi-Variable.ttf) format('truetype');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+}
+
