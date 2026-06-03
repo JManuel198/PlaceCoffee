@@ -2,8 +2,8 @@
 1. Fuentes
 -------------------------------------*/
 @font-face {
-    font-family: 'Lora';
-    src: url(../assets/fonts/Lora/Lora-VariableFont_wght.ttf) format('truetype');
+    font-family: 'Fraunces';
+    src: url(../assets/fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf) format('truetype');
     font-weight: 300 700;
     font-style: normal;
     font-display: swap;
@@ -32,7 +32,7 @@
     --color-border: #D5D3CB; /* separadores sutiles */
 
     /* Tipografías */
-    --font-title: 'Lora', serif;
+    --font-title: 'Fraunces', serif;
     --font-body: 'Satoshi', sans-serif;
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
@@ -103,11 +103,10 @@ button {
 4. Componentes reutilizables: botones, cards, badges.
 -------------------------------------*/
 .btn {
-    display: inline-block;
     padding: var(--space-xxs) var(--space-md);
     background-color: transparent;
     color: var(--color-text);
-    border: solid 2px var(--color-accent);
+    border: solid 2px var(--color-bg);
     border-radius: 2rem;
     font-size: var(--text-base);
     font-weight: 500;
@@ -115,7 +114,7 @@ button {
 }
 .btn:hover {
     color: var(--color-accent);
-    text-decoration: underline;
+    background-color: var(--color-bg);
 }
 
 /*-----------------------------------
@@ -265,17 +264,6 @@ button {
     padding-bottom: var(--space-md);
 }
 
-.hero__link {
-    font-family: var(--font-body);
-    font-size: var(--text-base);
-    font-weight: 600;
-    display: inline-block;
-    padding: var(--space-xs) var(--space-lg);
-    background-color: var(--color-accent);
-    color: var(--color-text);
-    border-radius: 2rem;
-}
-
 .hero__logo {
     width: 170px;
     height: 170px;
@@ -284,6 +272,12 @@ button {
 }
 
 @media(min-width: 1024px) {
+    /*Ajustamos altura de la caja para que los elementos no sobresalgan*/
+    .hero__content{
+        min-height: 600px;
+        margin: 0 auto;
+    }
+
     .hero__title {
         font-size: var(--text-2xl);
     }
@@ -294,15 +288,12 @@ button {
     }
 
     .hero__link {
-        padding: var(--space-xxs) var(--space-md);
-        background-color: transparent;
-        border: solid 2px var(--color-accent);
-        transition: background-color 0.3s ease;
+        padding: var(--space-xs) var(--space-md);
     }
 
     .hero__link:hover {
         color: var(--color-accent);
-        text-decoration: underline;
+        background-color: var(--color-text);
     }
 }
 /*-----------------------------------
