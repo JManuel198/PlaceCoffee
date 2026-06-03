@@ -304,7 +304,7 @@ button {
 8. Layout - About
 -------------------------------------*/
 .about {
-    min-height: 80vh;
+    min-height: 90vh;
     background-color: var(--color-bg-alt);
     color: var(--color-primary);
     padding: var(--space-lg) var(--space-md);
