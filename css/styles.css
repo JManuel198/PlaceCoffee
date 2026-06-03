@@ -260,7 +260,7 @@ button {
 
 .hero__desc {
     font-family: var(--font-body);
-    font-size: var(--text-smd);
+    font-size: var(--text-base);
     font-weight: 400;
     padding-bottom: var(--space-md);
 }
@@ -286,6 +286,10 @@ button {
 @media(min-width: 1024px) {
     .hero__title {
         font-size: var(--text-2xl);
+    }
+
+    .hero__desc {
+        font-size: var(--text-smd);
     }
 
     .hero__link {
@@ -335,7 +339,7 @@ button {
 
 .about__desc {
     font-family: var(--font-body);
-    font-size: var(--text-smd);
+    font-size: var(--text-base);
     color: var(--color-text-muted);
     font-weight: 400;
     line-height: 1.6;
