@@ -290,6 +290,7 @@ button {
 
     .hero__desc {
         font-size: var(--text-smd);
+        max-width: 520px;
     }
 
     .hero__link {
