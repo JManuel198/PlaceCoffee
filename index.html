@@ -4,27 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--- SEO Básico -->
     <meta name="description" content="Place Coffee. Un espacio para leer, jugar y disfrutar. Café de especialidad en Acarigua.">
 
-    <!--- Open Graph para redes sociales -->
     <meta property="og:title" content="Place Coffee">
     <meta property="og:description" content="Un espacio para leer, jugar y disfrutar.">
     <meta property="og:image" content="#">
     <meta property="og:type" content="website">
-
-    <!--- URL y localización para redes sociales -->
     <meta property="og:url" content="#">
     <meta property="og:locale" content="es_ES">
 
-    <!-- Icono de la pestaña -->
     <link rel="icon" type="image/png" href="#">
 
     <title>Place Coffee - Café & Experiencias</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-
 
     <header class="header">
         <nav class="navbar">
@@ -36,12 +30,10 @@
             </ul>
             <a href="/" class="navbar__logo">Place Coffee</a>
             <button class="navbar__toggle" type="button" aria-label="Abrir menú de navegación">
-                <span class="navbar__hamburger">
-                    <img src="./assets/img/icons/burger-list-menu-navigation.svg" alt="" aria-hidden="true">
-                </span>
+                <img src="./assets/img/icons/burger-list-menu-navigation.svg" alt="" aria-hidden="true">
             </button>
             <div class="navbar__cta">
-                <a href="#contact" class="btn navbar__link">Pedir ahora</a> 
+                <a href="#contact" class="btn navbar__link">Pedir ahora</a>
             </div>
         </nav>
 
@@ -50,140 +42,278 @@
                 <img src="./assets/img/logo.png" alt="Logo de Place Coffee" class="hero__logo">
                 <h1 class="hero__title">Place Coffee</h1>
                 <p class="hero__desc">Café de origen, calma y buen ambiente en un mismo lugar. Tu pausa favorita del día empieza aquí.</p>
-                <div class="hero__cta">
-                    <a href="#menu" class="btn hero__link">Ver el menú</a>
-                </div>
+                <a href="#menu" class="btn hero__link">Ver el menú</a>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="about">
-            <h2 class="about__title">NOSOTROS</h2>
-            <div class="about__content">
-                <span class="about__subtitle">Café con intención, tiempo sin reloj</span>
-                <p class="about__desc">Nacimos de una idea sencilla: crear un lugar donde el café se disfrute sin prisa. Seleccionamos granos de pequeños productores, los tostamos con cuidado y los servimos en un espacio pensado para que te sientas en casa.</p>
-            </div>
-            <div class="about__stats">
-                <div class="about__stat">
-                    <span class="about__stat-value">+40</span>
-                    <span class="about__stat-label">cafés servidos al día</span>
+        <section class="about" id="about">
+            <div class="about__body">
+                <div class="about__text">
+                    <span class="eyebrow">Nosotros</span>
+                    <div class="about__content">
+                        <h2 class="about__subtitle">Café con intención, tiempo sin reloj</h2>
+                        <p class="about__desc">Nacimos de una idea sencilla: crear un lugar donde el café se disfrute sin prisa. Seleccionamos granos de pequeños productores, los tostamos con cuidado y los servimos en un espacio pensado para que te sientas en casa.</p>
+                    </div>
+                    <div class="about__stats">
+                        <div class="about__stat">
+                            <span class="about__stat-value">+40</span>
+                            <span class="about__stat-label">cafés servidos al día</span>
+                        </div>
+                        <div class="about__stat">
+                            <span class="about__stat-value">100%</span>
+                            <span class="about__stat-label">grano de origen</span>
+                        </div>
+                        <div class="about__stat">
+                            <span class="about__stat-value">7 días</span>
+                            <span class="about__stat-label">abierto a la semana</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="about__stat">
-                    <span class="about__stat-value">100%</span>
-                    <span class="about__stat-label">grano de origen</span>
-                </div>
-                <div class="about__stat">
-                    <span class="about__stat-value">7 días</span>
-                    <span class="about__stat-label">abierto a la semana</span>
+                <div class="about__image-wrap">
+                    <img src="./assets/img/gallery/Lugar_cafeteria.jpg" alt="Interior de Place Coffee" class="about__image">
                 </div>
             </div>
         </section>
 
-        <section class="menu">
-            <h2 class="menu__title">LA CARTA</h2>
-            <div class="menu__info">
-                <span class="menu__subtitle">Hecho con calma, servido con cariño.</span>
+        <section class="menu" id="menu">
+            <div class="menu__header">
+                <span class="eyebrow">La Carta</span>
+                <h2 class="menu__title">Hecho con calma,<br>servido con cariño.</h2>
                 <p class="menu__desc">Cada producto se prepara al momento con ingredientes de temporada y café tostado en pequeños lotes. Esto es una muestra de lo que te espera.</p>
-            </div>
-            <div class="menu__items">
-                <div class="menu__item">
-                    <img src="#" alt="" class="menu__item-img">
-                    <h3 class="menu__item-title">Café de especialidad</h3>
-                    <p class="menu__item-desc">Espresso · Filtrado · Cold brew</p>
-                </div>
-
-                <div class="menu__item">
-                    <img src="#" alt="" class="menu__item-img">
-                    <h3 class="menu__item-title">Desayunos</h3>
-                    <p class="menu__item-desc">Todtadas, huevo, granola</p>
-                </div>
-
-                <div class="menu__item">
-                    <img src="#" alt="" class="menu__item-img">
-                    <h3 class="menu__item-title">Bebidas</h3>
-                    <p class="menu__item-desc">Matcha, chai, limonadas</p>
-                </div>
-
-                <div class="menu__item">
-                    <img src="#" alt="" class="menu__item-img">
-                    <h3 class="menu__item-title">Postres</h3>
-                    <p class="menu__item-desc">Helados, cookies, tartas</p>
-                </div>
-
-                <div class="menu__item">
-                    <img src="#" alt="" class="menu__item-img">
-                    <h3 class="menu__item-title">Platos</h3>
-                    <p class="menu__item-desc">Bowls, sándwiches, ensaladas</p>
-                </div>
-
-                <div class="menu__item">
-                    <img src="#" alt="" class="menu__item-img">
-                    <h3 class="menu__item-title">Para llevar</h3>
-                    <p class="menu__item-desc">Café en grano · merch</p>
+                <div class="menu__cta-wrap">
+                    <a href="#" class="link-arrow">
+                        Ver el menú completo
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
-            <a href="#" class="menu__link">Ver el menú completo</a>
+
+            <!-- Vista Galería: cuadrícula 3 columnas (desktop) -->
+            <div class="menu__view menu__view--gallery">
+                <div class="menu__grid">
+
+                    <a href="#" class="menu__card">
+                        <img src="./assets/img/gallery/DosCafes_DosManos.jpg" alt="Café de especialidad" class="menu__card-img">
+                        <h3 class="menu__card-name">Café de especialidad</h3>
+                        <span class="menu__card-cat">Cafés</span>
+                    </a>
+
+                    <a href="#" class="menu__card">
+                        <img src="./assets/img/gallery/Desayuno_cachitos.jpg" alt="Desayunos" class="menu__card-img">
+                        <h3 class="menu__card-name">Desayunos</h3>
+                        <span class="menu__card-cat">Salados & dulces</span>
+                    </a>
+
+                    <a href="#" class="menu__card">
+                        <img src="./assets/img/gallery/Cafe_frio.jpg" alt="Bebidas sin café" class="menu__card-img">
+                        <h3 class="menu__card-name">Bebidas</h3>
+                        <span class="menu__card-cat">Sin café</span>
+                    </a>
+
+                    <a href="#" class="menu__card">
+                        <img src="./assets/img/gallery/Galleta_con_cafe.jpg" alt="Postres" class="menu__card-img">
+                        <h3 class="menu__card-name">Postres</h3>
+                        <span class="menu__card-cat">Dulces</span>
+                    </a>
+
+                    <a href="#" class="menu__card">
+                        <img src="./assets/img/gallery/Personas_cafe.jpg" alt="Platos" class="menu__card-img">
+                        <h3 class="menu__card-name">Platos</h3>
+                        <span class="menu__card-cat">Salados</span>
+                    </a>
+
+                    <a href="#" class="menu__card">
+                        <img src="./assets/img/gallery/TresCafes_TresManos.jpg" alt="Para llevar" class="menu__card-img">
+                        <h3 class="menu__card-name">Para llevar</h3>
+                        <span class="menu__card-cat">Café & Merch</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Vista Carta: filas tipo lista (mobile) -->
+            <div class="menu__view menu__view--carta">
+                <div class="menu__list">
+
+                    <div class="menu__list-item">
+                        <img src="./assets/img/gallery/DosCafes_DosManos.jpg" alt="Café de especialidad" class="menu__list-img">
+                        <div class="menu__list-info">
+                            <h3 class="menu__list-name">Café de especialidad</h3>
+                            <p class="menu__list-desc">Espresso · Filtrado · Cold brew</p>
+                        </div>
+                        <span class="menu__list-dots" aria-hidden="true"></span>
+                        <span class="menu__list-price">Bs. 5</span>
+                    </div>
+
+                    <div class="menu__list-item">
+                        <img src="./assets/img/gallery/Desayuno_cachitos.jpg" alt="Desayunos" class="menu__list-img">
+                        <div class="menu__list-info">
+                            <h3 class="menu__list-name">Desayunos</h3>
+                            <p class="menu__list-desc">Tostadas · Huevo · Granola</p>
+                        </div>
+                        <span class="menu__list-dots" aria-hidden="true"></span>
+                        <span class="menu__list-price">Bs. 8</span>
+                    </div>
+
+                    <div class="menu__list-item">
+                        <img src="./assets/img/gallery/Cafe_frio.jpg" alt="Bebidas sin café" class="menu__list-img">
+                        <div class="menu__list-info">
+                            <h3 class="menu__list-name">Bebidas</h3>
+                            <p class="menu__list-desc">Matcha · Chai · Limonadas</p>
+                        </div>
+                        <span class="menu__list-dots" aria-hidden="true"></span>
+                        <span class="menu__list-price">Bs. 4</span>
+                    </div>
+
+                    <div class="menu__list-item">
+                        <img src="./assets/img/gallery/Galleta_con_cafe.jpg" alt="Postres" class="menu__list-img">
+                        <div class="menu__list-info">
+                            <h3 class="menu__list-name">Postres</h3>
+                            <p class="menu__list-desc">Helados · Cookies · Tartas</p>
+                        </div>
+                        <span class="menu__list-dots" aria-hidden="true"></span>
+                        <span class="menu__list-price">Bs. 6</span>
+                    </div>
+
+                    <div class="menu__list-item">
+                        <img src="./assets/img/gallery/Personas_cafe.jpg" alt="Platos" class="menu__list-img">
+                        <div class="menu__list-info">
+                            <h3 class="menu__list-name">Platos</h3>
+                            <p class="menu__list-desc">Bowls · Sándwiches · Ensaladas</p>
+                        </div>
+                        <span class="menu__list-dots" aria-hidden="true"></span>
+                        <span class="menu__list-price">Bs. 10</span>
+                    </div>
+
+                    <div class="menu__list-item">
+                        <img src="./assets/img/gallery/TresCafes_TresManos.jpg" alt="Para llevar" class="menu__list-img">
+                        <div class="menu__list-info">
+                            <h3 class="menu__list-name">Para llevar</h3>
+                            <p class="menu__list-desc">Café en grano · Merch</p>
+                        </div>
+                        <span class="menu__list-dots" aria-hidden="true"></span>
+                        <span class="menu__list-price">Desde Bs. 12</span>
+                    </div>
+
+                </div>
+                <a href="#" class="btn--ghost btn--full">Ver el menú completo</a>
+            </div>
+
         </section>
 
-        <section class="gallery">
-            <h2 class="gallery__title">EL LUGAR</h2>
-            <p class="gallery__desc">Un ambiente luminoso y tranquilo pensado para leer, trabajar, conversar o simplemente perder la noción del tiempo con una buena taza.</p>
-            <div class="gallery__container">
-                <div class="gallery__items">
-                    <img src="#" alt="" class="gallery__item-img">
-                    <img src="#" alt="" class="gallery__item-img">
-                    <img src="#" alt="" class="gallery__item-img">
-                    <img src="#" alt="" class="gallery__item-img">
+        <section class="gallery" id="gallery">
+            <div class="gallery__header">
+                <span class="eyebrow eyebrow--centered">El Lugar</span>
+                <h2 class="gallery__title">Un espacio pensado<br>para quedarse.</h2>
+                <p class="gallery__desc">Un ambiente luminoso y tranquilo para leer, trabajar, conversar o simplemente perder la noción del tiempo con una buena taza.</p>
+            </div>
+
+            <!-- Vista Retícula: cuadrícula (desktop) -->
+            <div class="gallery__view gallery__view--reticula">
+                <div class="gallery__grid">
+                    <img src="./assets/img/gallery/Lugar_cafeteria.jpg" alt="Interior del local" class="gallery__img">
+                    <img src="./assets/img/gallery/Personas_disfrutando.jpg" alt="Personas leyendo" class="gallery__img">
+                    <img src="./assets/img/gallery/Personas_conversoando.jpg" alt="Zona de trabajo" class="gallery__img">
+                    <img src="./assets/img/gallery/Personas_cafe.jpg" alt="Juegos de mesa" class="gallery__img">
                 </div>
-                <a href="#" class="gallery__link">Ver ubicación y horarios</a>
+            </div>
+
+            <!-- Vista Inmersiva: imagen grande + 3 miniaturas (mobile) -->
+            <div class="gallery__view gallery__view--inmersiva">
+                <div class="gallery__immersive">
+                    <div class="gallery__immersive-main">
+                        <img src="./assets/img/gallery/Lugar_cafeteria.jpg" alt="Interior del local" class="gallery__img gallery__img--wide">
+                    </div>
+                    <div class="gallery__immersive-row">
+                        <div class="gallery__immersive-thumb">
+                            <img src="./assets/img/gallery/Personas_disfrutando.jpg" alt="Personas leyendo" class="gallery__img">
+                            <span class="gallery__activity-tag">Leer</span>
+                        </div>
+                        <div class="gallery__immersive-thumb">
+                            <img src="./assets/img/gallery/Personas_conversoando.jpg" alt="Personas trabajando" class="gallery__img">
+                            <span class="gallery__activity-tag">Trabajar</span>
+                        </div>
+                        <div class="gallery__immersive-thumb">
+                            <img src="./assets/img/gallery/Personas_cafe.jpg" alt="Personas jugando" class="gallery__img">
+                            <span class="gallery__activity-tag">Jugar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery__footer">
+                <a href="#" class="btn--ghost">Ver ubicación y horarios</a>
             </div>
         </section>
 
-        <section class="contact">
-            <h2 class="contact__title">CONTACTO</h2>
-            <div class="contact__info">
-                <span class="contact__subtitle">¿Vienes a tomar un café con nosotros?</span>
+        <section class="contact" id="contact">
+            <div class="contact__header">
+                <span class="eyebrow eyebrow--centered">Contacto</span>
+                <h2 class="contact__title">¿Vienes a tomar<br>un café con nosotros?</h2>
                 <p class="contact__desc">Reserva una mesa, pregunta por el menú del día o resuelve cualquier duda. Te respondemos por WhatsApp en minutos.</p>
             </div>
-            <a href="#" class="contact__link">
-                <img src="#" alt="" aria-hidden="true" class="contact__link-icon">
+            <a href="https://wa.me/584245555555" class="btn--whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+                <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
                 Escríbenos por WhatsApp
             </a>
+            <div class="contact__info">
+                <div class="contact__info-item">
+                    <span class="contact__info-label">Dónde estamos</span>
+                    <span class="contact__info-value">Av. 27 con Calle 14 · Acarigua</span>
+                </div>
+                <span class="contact__info-sep" aria-hidden="true"></span>
+                <div class="contact__info-item">
+                    <span class="contact__info-label">Horario</span>
+                    <span class="contact__info-value">Lun–Vie 7–21 h · Sáb 8–22 h · Dom 8–18 h</span>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="footer__content">
-            <div class="footer__map">
-                <h3 class="map__title">DÓNDE ESTAMOS</h3>
-                <span class="map__subtitle">Visítanos</span>
-                <a href="/" class="map__link"><img src="" alt=""></a>
-                <p class="map__desc">Av. 27, Calle 14</p>
+        <div class="footer__body">
+
+            <div class="footer__block footer__block--location">
+                <span class="eyebrow eyebrow--footer">Dónde estamos</span>
+                <h3 class="footer__block-title">Visítanos en<br>Acarigua.</h3>
+                <img src="./assets/img/gallery/Personas_conversoando.jpg" alt="Ambiente en Place Coffee" class="footer__map-img">
+                <p class="footer__address">Av. 27, cruce con Calle 14<br>Acarigua, Portuguesa.</p>
             </div>
-            <div class="footer__time">
-                <h3 class="time__title">HORARIOS</h3>
-                <span class="time__subtitle">Cuándo abrimos</span>
-                <div class="time__items">
-                    <div class="time__item">
-                        <p class="time__desc">Lunes — Viernes</p>
-                        <p class="time__value">7:00 — 21:00</p>
+
+            <div class="footer__block footer__block--hours">
+                <span class="eyebrow eyebrow--footer">Horarios</span>
+                <h3 class="footer__block-title">Cuándo<br>abrimos.</h3>
+                <div class="footer__hours-table">
+                    <div class="footer__hours-row">
+                        <span class="footer__hours-day">Lunes — Viernes</span>
+                        <span class="footer__hours-time">7:00 — 21:00</span>
                     </div>
-                    <div class="time__item">
-                        <p class="time__desc">Sábado</p>
-                        <p class="time__value">8:00 — 22:00</p>
+                    <div class="footer__hours-row">
+                        <span class="footer__hours-day">Sábado</span>
+                        <span class="footer__hours-time">8:00 — 22:00</span>
                     </div>
-                    <div class="time__item">
-                        <p class="time__desc">Domingo</p>
-                        <p class="time__value">8:00 — 18:00</p>
+                    <div class="footer__hours-row">
+                        <span class="footer__hours-day">Domingo</span>
+                        <span class="footer__hours-time">8:00 — 18:00</span>
                     </div>
                 </div>
+                <a href="#" class="btn--ghost-footer">Cómo llegar</a>
             </div>
-            <div class="footer__brand-wrapper">
-                <span class="footer__copyright">© 2026 Place Coffee</span>
-                <span class="footer__brand">Place Coffee</span>
-            </div>
+
+        </div>
+
+        <div class="footer__legal">
+            <span class="footer__copyright">© 2026 Place Coffee. Todos los derechos reservados.</span>
+            <span class="footer__brand">Place Coffee</span>
         </div>
     </footer>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>
