@@ -2,9 +2,15 @@ const navbar = document.querySelector('.navbar');
 const navToggle = document.querySelector('.nav__toggle');
 const navMobile = document.getElementById('nav-menu');
 
-window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 10);
+const sentinel = document.createElement('div');
+sentinel.style.cssText = 'position:absolute;top:80px;height:1px;width:1px;pointer-events:none';
+document.body.prepend(sentinel);
+
+const observer = new IntersectionObserver(([entry]) => {
+    navbar.classList.toggle('scrolled', !entry.isIntersecting);
 });
+
+observer.observe(sentinel);
 
 navToggle.addEventListener('click', () => {
     const isOpen = navToggle.classList.toggle('nav__toggle--open');

@@ -16,6 +16,7 @@
     <link rel="icon" type="image/png" href="#">
 
     <title>Place Coffee - Café & Experiencias</title>
+    <link rel="preload" as="image" href="./assets/img/hero.jpg">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -54,7 +55,8 @@
 
         <div class="hero">
             <div class="hero__content">
-                <img src="./assets/img/logo.png" alt="Logo de Place Coffee" class="hero__logo">
+                <!-- fetchpriority=high: imagen en el viewport inicial, el browser debe descargarla primero -->
+                <img src="./assets/img/logo.png" alt="Logo de Place Coffee" class="hero__logo" width="80" height="80" fetchpriority="high">
                 <span class="hero__eyebrow">El lugar · Acarigua</span>
                 <h1 class="hero__title">Tu pausa favorita</h1>
                 <p class="hero__desc">Café de origen, calma y buen ambiente en un mismo lugar. Tu pausa favorita del día empieza aquí.</p>
@@ -88,7 +90,7 @@
                     </div>
                 </div>
                 <div class="about__image-wrap">
-                    <img src="./assets/img/gallery/Lugar_cafeteria.jpg" alt="Interior de Place Coffee" class="about__image">
+                    <img src="./assets/img/gallery/Interior_cafeteria.jpg" alt="Interior de Place Coffee" class="about__image" width="800" height="600" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
@@ -114,42 +116,42 @@
 
                     <a href="#" class="menu__card">
                         <span class="menu__card-index">01</span>
-                        <img src="./assets/img/gallery/DosCafes_DosManos.jpg" alt="Café de especialidad" class="menu__card-img">
+                        <img src="./assets/img/menu/menu_coffee.jpg" alt="Café de especialidad" class="menu__card-img" width="600" height="400" loading="lazy" decoding="async">
                         <h3 class="menu__card-name">Café de especialidad</h3>
                         <span class="menu__card-cat">Cafés</span>
                     </a>
 
                     <a href="#" class="menu__card">
                         <span class="menu__card-index">02</span>
-                        <img src="./assets/img/gallery/Desayuno_cachitos.jpg" alt="Desayunos" class="menu__card-img">
+                        <img src="./assets/img/menu/menu_breakfast.jpg" alt="Desayunos" class="menu__card-img" width="600" height="400" loading="lazy" decoding="async">
                         <h3 class="menu__card-name">Desayunos</h3>
                         <span class="menu__card-cat">Salados & dulces</span>
                     </a>
 
                     <a href="#" class="menu__card">
                         <span class="menu__card-index">03</span>
-                        <img src="./assets/img/gallery/Cafe_frio.jpg" alt="Bebidas sin café" class="menu__card-img">
+                        <img src="./assets/img/menu/menu_matcha.jpg" alt="Bebidas sin café" class="menu__card-img" width="600" height="400" loading="lazy" decoding="async">
                         <h3 class="menu__card-name">Bebidas</h3>
                         <span class="menu__card-cat">Sin café</span>
                     </a>
 
                     <a href="#" class="menu__card">
                         <span class="menu__card-index">04</span>
-                        <img src="./assets/img/gallery/Galleta_con_cafe.jpg" alt="Postres" class="menu__card-img">
+                        <img src="./assets/img/menu/menu_cookie.jpg" alt="Postres" class="menu__card-img" width="600" height="400" loading="lazy" decoding="async">
                         <h3 class="menu__card-name">Postres</h3>
                         <span class="menu__card-cat">Dulces</span>
                     </a>
 
                     <a href="#" class="menu__card">
                         <span class="menu__card-index">05</span>
-                        <img src="./assets/img/gallery/Personas_cafe.jpg" alt="Platos" class="menu__card-img">
+                        <img src="./assets/img/menu/menu_sandwich.jpg" alt="Platos" class="menu__card-img" width="600" height="400" loading="lazy" decoding="async">
                         <h3 class="menu__card-name">Platos</h3>
                         <span class="menu__card-cat">Salados</span>
                     </a>
 
                     <a href="#" class="menu__card">
                         <span class="menu__card-index">06</span>
-                        <img src="./assets/img/gallery/TresCafes_TresManos.jpg" alt="Para llevar" class="menu__card-img">
+                        <img src="./assets/img/menu/menu_coffee_grams.jpg" alt="Para llevar" class="menu__card-img" width="600" height="400" loading="lazy" decoding="async">
                         <h3 class="menu__card-name">Para llevar</h3>
                         <span class="menu__card-cat">Café & Merch</span>
                     </a>
@@ -162,63 +164,63 @@
                 <div class="menu__list">
 
                     <div class="menu__list-item">
-                        <img src="./assets/img/gallery/DosCafes_DosManos.jpg" alt="Café de especialidad" class="menu__list-img">
+                        <img src="./assets/img/menu/menu_coffee.jpg" alt="Café de especialidad" class="menu__list-img" width="64" height="64" loading="lazy" decoding="async">
                         <div class="menu__list-info">
                             <h3 class="menu__list-name">Café de especialidad</h3>
                             <p class="menu__list-desc">Espresso · Filtrado · Cold brew</p>
                         </div>
                         <span class="menu__list-dots" aria-hidden="true"></span>
-                        <span class="menu__list-price">Bs. 5</span>
+                        <span class="menu__list-price">Desde $5</span>
                     </div>
 
                     <div class="menu__list-item">
-                        <img src="./assets/img/gallery/Desayuno_cachitos.jpg" alt="Desayunos" class="menu__list-img">
+                        <img src="./assets/img/menu/menu_breakfast.jpg" alt="Desayunos" class="menu__list-img" width="64" height="64" loading="lazy" decoding="async">
                         <div class="menu__list-info">
                             <h3 class="menu__list-name">Desayunos</h3>
                             <p class="menu__list-desc">Tostadas · Huevo · Granola</p>
                         </div>
                         <span class="menu__list-dots" aria-hidden="true"></span>
-                        <span class="menu__list-price">Bs. 8</span>
+                        <span class="menu__list-price">Desde $8</span>
                     </div>
 
                     <div class="menu__list-item">
-                        <img src="./assets/img/gallery/Cafe_frio.jpg" alt="Bebidas sin café" class="menu__list-img">
+                        <img src="./assets/img/menu/menu_matcha.jpg" alt="Bebidas sin café" class="menu__list-img" width="64" height="64" loading="lazy" decoding="async">
                         <div class="menu__list-info">
                             <h3 class="menu__list-name">Bebidas</h3>
                             <p class="menu__list-desc">Matcha · Chai · Limonadas</p>
                         </div>
                         <span class="menu__list-dots" aria-hidden="true"></span>
-                        <span class="menu__list-price">Bs. 4</span>
+                        <span class="menu__list-price">Desde $4</span>
                     </div>
 
                     <div class="menu__list-item">
-                        <img src="./assets/img/gallery/Galleta_con_cafe.jpg" alt="Postres" class="menu__list-img">
+                        <img src="./assets/img/menu/menu_cookie.jpg" alt="Postres" class="menu__list-img" width="64" height="64" loading="lazy" decoding="async">
                         <div class="menu__list-info">
                             <h3 class="menu__list-name">Postres</h3>
                             <p class="menu__list-desc">Helados · Cookies · Tartas</p>
                         </div>
                         <span class="menu__list-dots" aria-hidden="true"></span>
-                        <span class="menu__list-price">Bs. 6</span>
+                        <span class="menu__list-price">Desde $6</span>
                     </div>
 
                     <div class="menu__list-item">
-                        <img src="./assets/img/gallery/Personas_cafe.jpg" alt="Platos" class="menu__list-img">
+                        <img src="./assets/img/menu/menu_sandwich.jpg" alt="Platos" class="menu__list-img" width="64" height="64" loading="lazy" decoding="async">
                         <div class="menu__list-info">
                             <h3 class="menu__list-name">Platos</h3>
                             <p class="menu__list-desc">Bowls · Sándwiches · Ensaladas</p>
                         </div>
                         <span class="menu__list-dots" aria-hidden="true"></span>
-                        <span class="menu__list-price">Bs. 10</span>
+                        <span class="menu__list-price">Desde $10</span>
                     </div>
 
                     <div class="menu__list-item">
-                        <img src="./assets/img/gallery/TresCafes_TresManos.jpg" alt="Para llevar" class="menu__list-img">
+                        <img src="./assets/img/menu/menu_coffee_grams.jpg" alt="Para llevar" class="menu__list-img" width="64" height="64" loading="lazy" decoding="async">
                         <div class="menu__list-info">
                             <h3 class="menu__list-name">Para llevar</h3>
                             <p class="menu__list-desc">Café en grano · Merch</p>
                         </div>
                         <span class="menu__list-dots" aria-hidden="true"></span>
-                        <span class="menu__list-price">Desde Bs. 12</span>
+                        <span class="menu__list-price">Desde $12</span>
                     </div>
 
                 </div>
@@ -229,7 +231,7 @@
 
         <section class="gallery" id="gallery">
             <div class="gallery__header">
-                <span class="eyebrow eyebrow--centered eyebrow--accent">El Lugar</span>
+                <span class="eyebrow eyebrow--centered">El Lugar</span>
                 <h2 class="gallery__title">Un espacio pensado<br>para quedarse.</h2>
                 <p class="gallery__desc">Un ambiente luminoso y tranquilo para leer, trabajar, conversar o simplemente perder la noción del tiempo con una buena taza.</p>
             </div>
@@ -237,10 +239,11 @@
             <!-- Vista Retícula: cuadrícula (desktop) -->
             <div class="gallery__view gallery__view--reticula">
                 <div class="gallery__grid">
-                    <img src="./assets/img/gallery/Lugar_cafeteria.jpg" alt="Interior del local" class="gallery__img">
-                    <img src="./assets/img/gallery/Personas_disfrutando.jpg" alt="Personas leyendo" class="gallery__img">
-                    <img src="./assets/img/gallery/Personas_conversoando.jpg" alt="Zona de trabajo" class="gallery__img">
-                    <img src="./assets/img/gallery/Personas_cafe.jpg" alt="Juegos de mesa" class="gallery__img">
+                    <img src="./assets/img/gallery/Interior_cafeteria.jpg" alt="Interior del local" class="gallery__img" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="./assets/img/gallery/gallery_leer.jpg" alt="Persona leyendo" class="gallery__img" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="./assets/img/gallery/gallery_trabajar.jpg" alt="Zona de trabajo" class="gallery__img" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="./assets/img/gallery/gallery_jugar.jpg" alt="Juegos de mesa" class="gallery__img" width="800" height="600" loading="lazy" decoding="async">
+                    <img src="./assets/img/gallery/gallery_pintar.jpg" alt="Persona pintando" class="gallery__img" width="800" height="600" loading="lazy" decoding="async">
                 </div>
             </div>
 
@@ -248,20 +251,24 @@
             <div class="gallery__view gallery__view--inmersiva">
                 <div class="gallery__immersive">
                     <div class="gallery__immersive-main">
-                        <img src="./assets/img/gallery/Lugar_cafeteria.jpg" alt="Interior del local" class="gallery__img gallery__img--wide">
+                        <img src="./assets/img/gallery/Interior_cafeteria.jpg" alt="Interior del local" class="gallery__img gallery__img--wide" width="1600" height="900" loading="lazy" decoding="async">
                     </div>
                     <div class="gallery__immersive-row">
                         <div class="gallery__immersive-thumb">
-                            <img src="./assets/img/gallery/Personas_disfrutando.jpg" alt="Personas leyendo" class="gallery__img">
+                            <img src="./assets/img/gallery/gallery_leer.jpg" alt="Café y un libro" class="gallery__img" width="800" height="600" loading="lazy" decoding="async">
                             <span class="gallery__activity-tag">Leer</span>
                         </div>
                         <div class="gallery__immersive-thumb">
-                            <img src="./assets/img/gallery/Personas_conversoando.jpg" alt="Personas trabajando" class="gallery__img">
+                            <img src="./assets/img/gallery/gallery_trabajar.jpg" alt="Persona trabajando" class="gallery__img" width="800" height="600" loading="lazy" decoding="async">
                             <span class="gallery__activity-tag">Trabajar</span>
                         </div>
                         <div class="gallery__immersive-thumb">
-                            <img src="./assets/img/gallery/Personas_cafe.jpg" alt="Personas jugando" class="gallery__img">
+                            <img src="./assets/img/gallery/gallery_jugar.jpg" alt="Personas jugando" class="gallery__img" width="800" height="600" loading="lazy" decoding="async">
                             <span class="gallery__activity-tag">Jugar</span>
+                        </div>
+                        <div class="gallery__immersive-thumb">
+                            <img src="./assets/img/gallery/gallery_pintar.jpg" alt="Persona pintando" class="gallery__img" width="800" height="600" loading="lazy" decoding="async">
+                            <span class="gallery__activity-tag">Pintar</span>
                         </div>
                     </div>
                 </div>
@@ -292,7 +299,7 @@
                 <span class="contact__info-sep" aria-hidden="true"></span>
                 <div class="contact__info-item">
                     <span class="contact__info-label">Horario</span>
-                    <span class="contact__info-value">Lun–Vie 7–21 h · Sáb 8–22 h · Dom 8–18 h</span>
+                    <span class="contact__info-value">Lun-Vie 7-21 h · Sáb 8-22 h · Dom 8-18 h</span>
                 </div>
             </div>
         </section>
@@ -304,8 +311,10 @@
             <div class="footer__block footer__block--location">
                 <span class="eyebrow eyebrow--footer">Dónde estamos</span>
                 <h3 class="footer__block-title">Visítanos en<br>Acarigua.</h3>
-                <img src="./assets/img/gallery/Personas_conversoando.jpg" alt="Ambiente en Place Coffee" class="footer__map-img">
+                <!-- Mapa de google junto con la dirección exacta, se debe actualizar el src del iframe con la ubicación real del local
+                <iframe src="#" class="footer__map-img" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                
                 <p class="footer__address">Av. 27, cruce con Calle 14<br>Acarigua, Portuguesa.</p>
+                -->
             </div>
 
             <div class="footer__block footer__block--hours">
