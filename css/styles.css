@@ -18,45 +18,65 @@
 }
 
 /*-----------------------------------
-2. Variables
+2. Variables CSS: colores, tipografía, espaciado...
 -------------------------------------*/
 :root {
-    --color-primary: #3D5A6C;
-    --color-bg: #F7F6F2;
-    --color-bg-alt: #ECEAE3;
-    --color-text-muted: #6B7F8A;
-    --color-text: #FFFFFF;
-    --color-text-inverse: #2C3E47;
-    --color-accent: #7FA4B3;
-    --color-border: #D5D3CB;
+    --color-primary:       #3D5A6C;  /* azul principal */
+    --color-primary-deep:  #2C3E47;  /* versión oscura, para títulos sobre fondo claro */
+    --color-accent:        #7FA4B3;  /* acento */
+    --color-accent-soft:   #A8C2CC;  /* acento más claro, para detalles sutiles */
 
+    --color-bg:        #F7F6F2;  /* crema principal */
+    --color-bg-alt:    #EFEDE6;  /* crema un punto más oscuro */
+    --color-bg-warm:   #E8E2D5;  /* crema cálida, para destacar */
+
+    --color-text:         #FFFFFF;  /* texto sobre fondos oscuros */
+    --color-text-inverse: #2C3E47;  /* texto sobre fondos claros */
+    --color-text-muted:   #6B7F8A;  /* texto secundario */
+    --color-border:       #DAD7CE;  /* bordes */
+
+    /* --- TIPOGRAFÍA --- */
     --font-title: 'Fraunces', serif;
-    --font-body: 'Satoshi', sans-serif;
-    --text-xs: 0.75rem;
-    --text-sm: 0.875rem;
-    --text-base: 1rem;
-    --text-smd: 1.25rem;
-    --text-md: 1.5rem;
-    --text-lg: 2rem;
-    --text-xl: 3rem;
-    --text-2xl: 4.5rem;
+    --font-body:  'Satoshi', sans-serif;
 
+    --text-xs:   0.75rem;
+    --text-sm:   0.875rem;
+    --text-base: 1rem;
+    --text-smd:  1.125rem;
+    --text-md:   clamp(1.5rem, 1.2rem + 1.5vw, 2rem);     /* subtítulos fluidos */
+    --text-lg:   clamp(2rem, 1.5rem + 2.5vw, 3rem);       /* títulos de sección */
+    --text-xl:   clamp(2.5rem, 1.8rem + 3.5vw, 4rem);     /* títulos grandes */
+    --text-display: clamp(3rem, 2rem + 6vw, 6.5rem);      /* hero y números decorativos */
+
+    /* --- ESPACIADO --- */
     --space-xxs: 0.25rem;
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 2rem;
-    --space-xl: 4rem;
-    --space-2xl: 8rem;
+    --space-xs:  0.5rem;
+    --space-sm:  1rem;
+    --space-md:  1.5rem;
+    --space-lg:  2rem;
+    --space-xl:  3rem;
+    --space-2xl: 5rem;
+    --space-3xl: 8rem;
+
+    /* --- BORDES --- */
+    --radius-sm:  8px;
+    --radius-md:  16px;
+    --radius-lg:  24px;
+    --radius-full: 999px;
+
+
+    --shadow-sm: 0 1px 3px rgba(44, 62, 71, 0.06), 0 4px 12px rgba(44, 62, 71, 0.04);
+    --shadow-md: 0 2px 8px rgba(44, 62, 71, 0.08), 0 12px 32px rgba(44, 62, 71, 0.08);
 
     --navbar-height: 68px;
-
     --z-overlay: 99;
     --z-modal: 200;
 
     --transition-base: 0.3s ease;
-}
+    --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
 
+    --content-max: 1200px;
+}
 /*-----------------------------------
 3. Reset y base
 -------------------------------------*/
