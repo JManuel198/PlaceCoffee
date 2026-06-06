@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada — Place Coffee</title>
+
+    <!-- Las mismas fuentes que el sitio principal -->
+    <style>
+        @font-face {
+            font-family: 'Fraunces';
+            src: url('./assets/fonts/Fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf') format('truetype');
+            font-weight: 300 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Satoshi';
+            src: url('./assets/fonts/Satoshi_Complete/Fonts/TTF/Satoshi-Variable.ttf') format('truetype');
+            font-weight: 300 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Variables: las mismas que en styles.css */
+        :root {
+            --color-primary:      #3D5A6C;
+            --color-primary-deep: #2C3E47;
+            --color-accent:       #7FA4B3;
+            --color-accent-soft:  #A8C2CC;
+            --color-bg:           #F7F6F2;
+            --color-bg-alt:       #EFEDE6;
+            --color-text:         #FFFFFF;
+            --color-text-inverse: #2C3E47;
+            --color-text-muted:   #6B7F8A;
+            --color-border:       #DAD7CE;
+
+            --font-title: 'Fraunces', serif;
+            --font-body:  'Satoshi', sans-serif;
+
+            --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+        }
+
+        /* Reset mínimo */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text-inverse);
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* Layout principal */
+        .page {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem 1.5rem 2.5rem;
+        }
+
+        /* Navbar mínima: solo el logo */
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav__logo {
+            font-family: var(--font-title);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+        .nav__back {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--color-text-muted);
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            transition: color 0.25s var(--ease-out), gap 0.25s var(--ease-out);
+        }
+        .nav__back:hover {
+            color: var(--color-primary);
+            gap: 0.6rem;
+        }
+        .nav__back svg {
+            transform: rotate(180deg);
+            flex-shrink: 0;
+        }
+
+        /* Bloque central */
+        .body {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 3rem 0 2rem;
+        }
+
+        .body__number {
+            font-family: var(--font-title);
+            font-size: clamp(7rem, 25vw, 14rem);
+            font-weight: 600;
+            line-height: 0.9;
+            color: var(--color-bg-alt);
+            letter-spacing: -0.04em;
+            user-select: none;
+            text-decoration: underline;
+            text-decoration-color: var(--color-accent);
+            text-decoration-thickness: 3px;
+            text-underline-offset: 0.05em;
+            animation: slideUp 0.7s var(--ease-out) 0s both;
+        }
+
+        .body__text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 480px;
+            animation: slideUp 0.7s var(--ease-out) 0.1s both;
+        }
+
+        .body__eyebrow {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+        }
+
+        .body__title {
+            font-family: var(--font-title);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--color-primary-deep);
+            letter-spacing: -0.01em;
+        }
+
+        .body__desc {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+
+        /* Acciones */
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            animation: slideUp 0.7s var(--ease-out) 0.2s both;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            background-color: var(--color-primary);
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s var(--ease-out);
+            width: fit-content;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Links secundarios de navegación rápida */
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            padding-top: 0.5rem;
+        }
+        .quick-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 1px;
+            transition: color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+        }
+        .quick-link:hover {
+            color: var(--color-primary);
+            border-color: var(--color-accent);
+        }
+
+        /* Footer mínimo */
+        .footer-mini {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .footer-mini__copy {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+        }
+        .footer-mini__brand {
+            font-family: var(--font-title);
+            font-style: italic;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--color-accent);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 1024px) {
+            .page {
+                padding: 2.5rem 5rem 3rem;
+            }
+            .body {
+                padding: 4rem 0 3rem;
+                flex-direction: row;
+                align-items: flex-end;
+                gap: 4rem;
+            }
+            .body__number {
+                flex-shrink: 0;
+            }
+            .body__right {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                padding-bottom: 0.5rem;
+            }
+            .actions {
+                animation-delay: 0.15s;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+
+        <!-- Navbar -->
+        <nav class="nav" aria-label="Navegación de error">
+            <a href="/" class="nav__logo">Place Coffee</a>
+            <a href="/" class="nav__back" aria-label="Volver al inicio">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Volver al inicio
+            </a>
+        </nav>
+
+        <main class="body" id="main-content">
+
+            <span class="body__number" aria-hidden="true">404</span>
+
+            <div class="body__right">
+
+                <div class="body__text">
+                    <span class="body__eyebrow">Página no encontrada</span>
+                    <h1 class="body__title">Esta mesa<br>no existe.</h1>
+                    <p class="body__desc">
+                        Parece que la página que buscas ya no está o fue movida.
+                        Vuelve al inicio y encuentra tu pausa favorita del día.
+                    </p>
+                </div>
+
+                <div class="actions">
+                    <a href="/" class="btn-primary">
+                        Ir al inicio
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+
+                    <!-- Links de navegación rápida para no dejar al usuario colgado -->
+                    <div class="quick-links" role="navigation" aria-label="Páginas principales">
+                        <a href="/#about"   class="quick-link">Nosotros</a>
+                        <a href="/#menu"    class="quick-link">Menú</a>
+                        <a href="/#gallery" class="quick-link">Galería</a>
+                        <a href="/#contact" class="quick-link">Contacto</a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="footer-mini">
+            <span class="footer-mini__copy">© 2026 Place Coffee. Todos los derechos reservados.</span>
+            <span class="footer-mini__brand">Place Coffee</span>
+        </footer>
+
+    </div>
+
+</body>
+</html>
