@@ -806,6 +806,9 @@ button {
     .menu__card-index {
         font-size: var(--text-smd);
     }
+    .desktop-arrow {
+    display: inline;
+    }
 }
 
 /* Vista Carta */
