@@ -866,7 +866,7 @@ button {
 
 .menu__list-dots {
     flex: 1;
-    min-width: 16px;
+    max-width: 30px;
     border-bottom: 2px dotted var(--color-border);
     height: 1px;
     align-self: center;
