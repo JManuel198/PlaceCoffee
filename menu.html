@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="La carta de Place Coffee. Mira todo lo que servimos: cafés, desayunos, bebidas y más.">
+
+    <title>Menú - Place Coffee</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <style>
+        /*-----------------------------------
+        1. Navbar
+        -------------------------------------*/
+        .menu-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            height: var(--navbar-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-xs) var(--space-md);
+            background-color: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .menu-nav__back {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background-color: var(--color-bg-alt);
+            color: var(--color-text-inverse);
+            border: 1px solid var(--color-border);
+        }
+
+        .menu-nav__logo {
+            font-family: var(--font-title);
+            font-size: var(--text-md);
+            font-weight: 500;
+            color: var(--color-primary-deep);
+        }
+
+        .menu-nav__spacer {
+            width: 40px;
+            height: 40px;
+        }
+
+        /*-----------------------------------
+        2. Header del menú
+        -------------------------------------*/
+        .menu-header {
+            padding: calc(var(--navbar-height) + var(--space-2xl)) var(--space-md) var(--space-xl);
+            background-color: var(--color-bg);
+            color: var(--color-primary);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            max-width: 640px;
+        }
+
+        .menu-header__title {
+            font-family: var(--font-title);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            line-height: 1.05;
+            color: var(--color-text-inverse);
+        }
+
+        .menu-header__desc {
+            font-size: var(--text-base);
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+
+        .menu-header__badge {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            align-self: flex-start;
+            padding: var(--space-xxs) var(--space-sm);
+            border-radius: var(--radius-full);
+            background-color: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--color-text-muted);
+        }
+
+        .menu-header__dot {
+            width: 8px;
+            height: 8px;
+            border-radius: var(--radius-full);
+            background-color: #25D366;
+        }
+
+        /*-----------------------------------
+        3. Tab-bar de categorías
+        -------------------------------------*/
+        .menu-tabs {
+            position: sticky;
+            top: var(--navbar-height);
+            z-index: 90;
+            background-color: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-sm) var(--space-md);
+            display: flex;
+            gap: var(--space-xs);
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .menu-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .menu-tabs__btn {
+            flex-shrink: 0;
+            white-space: nowrap;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            background-color: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: var(--text-sm);
+            font-weight: 600;
+        }
+
+        .menu-tabs__btn--active {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            color: var(--color-text);
+        }
+
+        /*-----------------------------------
+        4. Secciones de categoría
+        -------------------------------------*/
+        .cat {
+            background-color: var(--color-bg-alt);
+            padding: var(--space-xl) var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        .cat--alt {
+            background-color: var(--color-bg);
+        }
+
+        .cat__header {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            max-width: 640px;
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .cat__title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: var(--space-md);
+        }
+
+        .cat__title {
+            font-family: var(--font-title);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--color-primary-deep);
+        }
+
+        .cat__num {
+            flex-shrink: 0;
+            font-family: var(--font-title);
+            font-size: var(--text-xl);
+            font-weight: 500;
+            line-height: 1;
+            color: var(--color-accent-soft);
+        }
+
+        .cat__desc {
+            font-size: var(--text-base);
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        /*-----------------------------------
+        5. Tarjeta destacada (feat-card)
+        -------------------------------------*/
+        .feat-card {
+            position: relative;
+            display: flex;
+            gap: var(--space-md);
+            padding: var(--space-md);
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feat-card__img {
+            flex-shrink: 0;
+            width: 88px;
+            height: 88px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+        }
+
+        .feat-card__body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xxs);
+        }
+
+        .feat-card__name {
+            font-family: var(--font-title);
+            font-size: var(--text-smd);
+            font-weight: 600;
+            color: var(--color-primary-deep);
+        }
+
+        .feat-card__desc {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        .feat-card__price {
+            font-family: var(--font-title);
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-top: var(--space-xxs);
+        }
+
+        .feat-card__tag {
+            position: absolute;
+            top: calc(-1 * var(--space-xs));
+            right: var(--space-md);
+            padding: var(--space-xxs) var(--space-sm);
+            border-radius: var(--radius-full);
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            font-size: var(--text-xs);
+            font-weight: 700;
+        }
+
+        /*-----------------------------------
+        6. Lista de productos
+        -------------------------------------*/
+        .cat__list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .cat-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xxs);
+        }
+
+        .cat-item__row {
+            display: flex;
+            align-items: baseline;
+            gap: var(--space-xs);
+        }
+
+        .cat-item__name {
+            font-weight: 600;
+            color: var(--color-primary-deep);
+        }
+
+        .cat-item__dots {
+            flex: 1;
+            border-bottom: 2px dotted var(--color-border);
+        }
+
+        .cat-item__price {
+            font-family: var(--font-title);
+            font-weight: 600;
+            color: var(--color-primary);
+            white-space: nowrap;
+        }
+
+        .cat-item__desc {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /*-----------------------------------
+        7. Leyenda de etiquetas
+        -------------------------------------*/
+        .menu-legend {
+            background-color: var(--color-bg);
+            padding: var(--space-xl) var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .menu-legend__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+        }
+
+        .menu-legend__tag {
+            padding: var(--space-xxs) var(--space-sm);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            font-weight: 600;
+        }
+
+        .menu-legend__tag--rec {
+            background-color: #FBEFD6;
+            color: #8A6D1F;
+        }
+        .menu-legend__tag--veg {
+            background-color: #E2F0E0;
+            color: #3E6B43;
+        }
+        .menu-legend__tag--gf {
+            background-color: #EDE6F5;
+            color: #5E4A86;
+        }
+
+        /*-----------------------------------
+        8. Footer CTA
+        -------------------------------------*/
+        .menu-cta {
+            background-color: var(--color-primary);
+            color: var(--color-text);
+            padding: var(--space-2xl) var(--space-md);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: var(--space-md);
+        }
+
+        .menu-cta__title {
+            font-family: var(--font-title);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        .menu-cta__link {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="menu-nav">
+        <a href="index.html" class="menu-nav__back" aria-label="Volver al inicio">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <span class="menu-nav__logo">Place Coffee</span>
+        <span class="menu-nav__spacer" aria-hidden="true"></span>
+    </nav>
+
+    <header class="menu-header">
+        <span class="eyebrow eyebrow--accent">Nuestra Carta</span>
+        <h1 class="menu-header__title">Lo que servimos</h1>
+        <p class="menu-header__desc">Una selección preparada al momento con ingredientes de temporada y café tostado en pequeños lotes. Explora todo lo que tenemos para ti.</p>
+        <span class="menu-header__badge">
+            <span class="menu-header__dot" aria-hidden="true"></span>
+            Menú actualizado
+        </span>
+    </header>
+
+    <nav class="menu-tabs" aria-label="Categorías del menú">
+        <button type="button" class="menu-tabs__btn menu-tabs__btn--active">Cafés</button>
+        <button type="button" class="menu-tabs__btn">Té e Infusiones</button>
+        <button type="button" class="menu-tabs__btn">Smoothies</button>
+        <button type="button" class="menu-tabs__btn">Comidas</button>
+        <button type="button" class="menu-tabs__btn">Postres</button>
+    </nav>
+
+    <section class="cat" id="cafes">
+        <div class="cat__header">
+            <span class="eyebrow eyebrow--accent">Cafés</span>
+            <div class="cat__title-row">
+                <h2 class="cat__title">Preparaciones de café</h2>
+                <span class="cat__num" aria-hidden="true">01</span>
+            </div>
+            <p class="cat__desc">Granos de origen tostados en lotes pequeños y extraídos al momento. Del espresso más intenso al cold brew más suave.</p>
+        </div>
+
+        <article class="feat-card">
+            <img src="./assets/img/menu/menu_espresso.jpg" alt="Espresso de Origen" class="feat-card__img" width="88" height="88" loading="lazy" decoding="async">
+            <div class="feat-card__body">
+                <h3 class="feat-card__name">Espresso de Origen</h3>
+                <p class="feat-card__desc">Cuerpo intenso y notas de cacao. Extraído de un solo origen seleccionado cada temporada.</p>
+                <span class="feat-card__price">$2.50</span>
+            </div>
+            <span class="feat-card__tag">Destacado</span>
+        </article>
+
+        <div class="cat__list">
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Americano</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$2.00</span>
+                </div>
+                <p class="cat-item__desc">Espresso alargado con agua caliente, suave y aromático.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Cappuccino</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$3.00</span>
+                </div>
+                <p class="cat-item__desc">Espresso con leche vaporizada y una capa cremosa de espuma.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Cold Brew</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$3.50</span>
+                </div>
+                <p class="cat-item__desc">Extracción en frío durante 18 horas, dulce y muy refrescante.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Macchiato</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$2.20</span>
+                </div>
+                <p class="cat-item__desc">Espresso "manchado" con un toque de leche espumada.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cat cat--alt" id="te">
+        <div class="cat__header">
+            <span class="eyebrow eyebrow--accent">Té e Infusiones</span>
+            <div class="cat__title-row">
+                <h2 class="cat__title">Tés e infusiones</h2>
+                <span class="cat__num" aria-hidden="true">02</span>
+            </div>
+            <p class="cat__desc">Selección de tés e infusiones para acompañar cualquier momento del día.</p>
+        </div>
+
+        <article class="feat-card">
+            <img src="#" alt="Chai Latte Especiado" class="feat-card__img" width="88" height="88" loading="lazy" decoding="async">
+            <div class="feat-card__body">
+                <h3 class="feat-card__name">Chai Latte Especiado</h3>
+                <p class="feat-card__desc">Mezcla de especias con leche vaporizada y un toque de miel.</p>
+                <span class="feat-card__price">$3.00</span>
+            </div>
+            <span class="feat-card__tag">Favorito</span>
+        </article>
+
+        <div class="cat__list">
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Té Verde Matcha</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$3.50</span>
+                </div>
+                <p class="cat-item__desc">Matcha ceremonial batido, herbal y con cuerpo.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Earl Grey</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$2.00</span>
+                </div>
+                <p class="cat-item__desc">Té negro clásico perfumado con bergamota.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Manzanilla con Miel</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$1.80</span>
+                </div>
+                <p class="cat-item__desc">Infusión suave y relajante, endulzada con miel.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Rooibos Vainilla</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$2.00</span>
+                </div>
+                <p class="cat-item__desc">Rooibos sin cafeína con un dulce aroma a vainilla.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cat" id="smoothies">
+        <div class="cat__header">
+            <span class="eyebrow eyebrow--accent">Smoothies</span>
+            <div class="cat__title-row">
+                <h2 class="cat__title">Smoothies y bebidas frías</h2>
+                <span class="cat__num" aria-hidden="true">03</span>
+            </div>
+            <p class="cat__desc">Bebidas frías con frutas frescas y un toque natural de energía.</p>
+        </div>
+
+        <article class="feat-card">
+            <img src="#" alt="Smoothie Verde Detox" class="feat-card__img" width="88" height="88" loading="lazy" decoding="async">
+            <div class="feat-card__body">
+                <h3 class="feat-card__name">Smoothie Verde Detox</h3>
+                <p class="feat-card__desc">Espinaca, manzana y jengibre, refrescante y ligero.</p>
+                <span class="feat-card__price">$4.50</span>
+            </div>
+            <span class="feat-card__tag">Nuevo</span>
+        </article>
+
+        <div class="cat__list">
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Smoothie de Mango</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$4.00</span>
+                </div>
+                <p class="cat-item__desc">Mango maduro batido con un toque de yogur natural.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Smoothie de Frutos Rojos</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$4.20</span>
+                </div>
+                <p class="cat-item__desc">Fresa, mora y arándano, dulce y antioxidante.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Smoothie Proteína</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$4.50</span>
+                </div>
+                <p class="cat-item__desc">Plátano, mantequilla de maní y proteína para recargar.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Limonada de Coco</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$3.50</span>
+                </div>
+                <p class="cat-item__desc">Limonada cremosa con agua de coco, muy refrescante.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cat cat--alt" id="comidas">
+        <div class="cat__header">
+            <span class="eyebrow eyebrow--accent">Comidas</span>
+            <div class="cat__title-row">
+                <h2 class="cat__title">Comidas y salados</h2>
+                <span class="cat__num" aria-hidden="true">04</span>
+            </div>
+            <p class="cat__desc">Opciones frescas para acompañar tu café, preparadas cada día.</p>
+        </div>
+
+        <article class="feat-card">
+            <img src="#" alt="Tostada de Aguacate" class="feat-card__img" width="88" height="88" loading="lazy" decoding="async">
+            <div class="feat-card__body">
+                <h3 class="feat-card__name">Tostada de Aguacate</h3>
+                <p class="feat-card__desc">Pan artesanal, aguacate y semillas tostadas.</p>
+                <span class="feat-card__price">$6.50</span>
+            </div>
+            <span class="feat-card__tag">Top venta</span>
+        </article>
+
+        <div class="cat__list">
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Croissant Jamón y Queso</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$5.00</span>
+                </div>
+                <p class="cat-item__desc">Croissant de mantequilla relleno y gratinado.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Bowl Açaí</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$7.00</span>
+                </div>
+                <p class="cat-item__desc">Açaí con granola, plátano y frutas frescas.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Sándwich Caprese</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$5.50</span>
+                </div>
+                <p class="cat-item__desc">Mozzarella, tomate y albahaca en pan ciabatta.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Wrap de Pollo</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$6.00</span>
+                </div>
+                <p class="cat-item__desc">Pollo, vegetales frescos y salsa de la casa.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cat" id="postres">
+        <div class="cat__header">
+            <span class="eyebrow eyebrow--accent">Postres</span>
+            <div class="cat__title-row">
+                <h2 class="cat__title">Postres y dulces</h2>
+                <span class="cat__num" aria-hidden="true">05</span>
+            </div>
+            <p class="cat__desc">Dulces horneados cada mañana para terminar bien cualquier visita.</p>
+        </div>
+
+        <article class="feat-card">
+            <img src="#" alt="Cheesecake de Limón" class="feat-card__img" width="88" height="88" loading="lazy" decoding="async">
+            <div class="feat-card__body">
+                <h3 class="feat-card__name">Cheesecake de Limón</h3>
+                <p class="feat-card__desc">Base de galleta, crema de queso y un toque cítrico.</p>
+                <span class="feat-card__price">$5.00</span>
+            </div>
+            <span class="feat-card__tag">Favorito</span>
+        </article>
+
+        <div class="cat__list">
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Brownie de Chocolate</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$3.50</span>
+                </div>
+                <p class="cat-item__desc">Denso y húmedo, con trozos de chocolate amargo.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Muffin de Arándanos</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$2.50</span>
+                </div>
+                <p class="cat-item__desc">Esponjoso y cargado de arándanos frescos.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Tiramisú</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$4.50</span>
+                </div>
+                <p class="cat-item__desc">Capas de bizcocho al café y crema de mascarpone.</p>
+            </div>
+
+            <div class="cat-item">
+                <div class="cat-item__row">
+                    <span class="cat-item__name">Cookie de Avena</span>
+                    <span class="cat-item__dots" aria-hidden="true"></span>
+                    <span class="cat-item__price">$2.00</span>
+                </div>
+                <p class="cat-item__desc">Galleta artesanal de avena con pasas, recién horneada.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-legend" aria-label="Leyenda de etiquetas">
+        <span class="eyebrow eyebrow--accent">Leyenda</span>
+        <div class="menu-legend__tags">
+            <span class="menu-legend__tag menu-legend__tag--rec">★ Recomendado</span>
+            <span class="menu-legend__tag menu-legend__tag--veg">🌿 Vegetariano</span>
+            <span class="menu-legend__tag menu-legend__tag--gf">Sin gluten</span>
+        </div>
+    </section>
+
+    <footer class="menu-cta">
+        <h2 class="menu-cta__title">Visítanos o pedí por WhatsApp</h2>
+        <a href="https://wa.me/584245555555" class="btn--whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+            <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Escríbenos por WhatsApp
+        </a>
+        <a href="index.html" class="menu-cta__link">Volver al inicio</a>
+    </footer>
+
+</body>
+</html>
