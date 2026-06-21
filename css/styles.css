@@ -263,7 +263,7 @@ button {
 }
 
 .eyebrow--footer {
-    color: var(--color-accent);
+    color: var(--color-accent-soft);
     opacity: 0.9;
 }
 
@@ -320,10 +320,11 @@ button {
     align-items: center;
     background-color: transparent;
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    padding: var(--space-sm) 0;
 }
 
 .navbar.scrolled {
-    background-color: rgba(247, 246, 242, 0.96);
+    background-color: rgba(247, 246, 242);
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -475,7 +476,7 @@ button {
 -------------------------------------*/
 .hero {
     min-height: 100dvh;
-    padding: var(--navbar-height) var(--space-md) var(--space-2xl);
+    padding: var(--navbar-height) var(--space-md) var(--space-xl);
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -494,12 +495,19 @@ button {
     max-width: 600px;
 }
 
+.hero__link {
+    background-color: var(--color-bg-alt);
+    border-radius: 999px;
+    color: var(--color-text-inverse);
+}
+
 .hero__logo {
     width: 64px;
     height: 64px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: var(--space-xs);
+    display: none;
 }
 
 .hero__eyebrow {
@@ -508,6 +516,7 @@ button {
     letter-spacing: 0.4em;
     text-transform: uppercase;
     color: var(--color-accent-soft);
+    display: none;
 }
 
 .hero__title {
@@ -594,7 +603,7 @@ button {
 }
 
 .about__desc {
-    font-size: var(--text-base);
+    font-size: var(--text-smd);
     color: var(--color-text-muted);
     line-height: 1.7;
 }
@@ -648,7 +657,6 @@ button {
         align-items: center;
     }
     .about__desc {
-        font-size: var(--text-smd);
         border-left: 2px solid var(--color-accent);
         padding-left: var(--space-md);
     }
@@ -706,9 +714,13 @@ button {
 }
 
 .menu__desc {
-    font-size: var(--text-base);
+    font-size: var(--text-smd);
     color: var(--color-text-muted);
     line-height: 1.7;
+}
+
+.desktop-arrow {
+    display: none;
 }
 
 /* Vista Galería */
@@ -815,9 +827,9 @@ button {
 }
 
 .menu__list-img {
-    width: 64px;
-    min-width: 64px;
-    height: 64px;
+    width: 74px;
+    min-width: 74px;
+    height: 74px;
     object-fit: cover;
     border-radius: 8px;
     flex-shrink: 0;
@@ -830,17 +842,26 @@ button {
 
 .menu__list-name {
     font-family: var(--font-title);
-    font-size: var(--text-sm);
+    font-size: var(--text-smd);
     font-weight: 600;
     color: var(--color-text-inverse);
     line-height: 1.2;
+    /* Ajustamos el ancho según el contenido */
+    display: inline-block;
+    flex: 0 0 auto;
+    width: auto;
+    white-space: nowrap;
 }
 
 .menu__list-desc {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     color: var(--color-text-muted);
     margin-top: 2px;
     line-height: 1.4;
+    display: inline-block;
+    flex: 0 0 auto;
+    width: 12vh;
+    white-space: wrap;
 }
 
 .menu__list-dots {
@@ -854,7 +875,7 @@ button {
 
 .menu__list-price {
     font-family: var(--font-title);
-    font-size: var(--text-base);
+    font-size: var(--text-smd);
     font-weight: 600;
     color: var(--color-primary);
     white-space: nowrap;
@@ -897,7 +918,7 @@ button {
 }
 
 .gallery__desc {
-    font-size: var(--text-base);
+    font-size: var(--text-smd);
     color: var(--color-text-muted);
     line-height: 1.6;
 }
@@ -908,6 +929,7 @@ button {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 12px;
+
 }
 
 .gallery__img--wide {
@@ -1031,7 +1053,7 @@ button {
 }
 
 .contact__desc {
-    font-size: var(--text-base);
+    font-size: var(--text-smd);
     color: var(--color-text-muted);
     line-height: 1.6;
 }
