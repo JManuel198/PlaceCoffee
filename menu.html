@@ -56,14 +56,52 @@
         /*-----------------------------------
         2. Header del menú
         -------------------------------------*/
+        /* Mismo patrón que el hero de index.html:
+           background-image en el contenedor + overlay con ::before + z-index del contenido. */
         .menu-header {
+            position: relative;
+            /* 50vh en lugar de 100vh: el hero es la portada y busca inmersión total
+               antes de cualquier contenido; aquí, en cambio, lo importante es la carta.
+               Un header a pantalla completa empujaría las pestañas y los productos
+               fuera del viewport. Con 50vh logramos una banda inmersiva que igual
+               deja asomar el inicio de la carta, invitando a hacer scroll. */
+            min-height: 50vh;
             padding: calc(var(--navbar-height) + var(--space-2xl)) var(--space-md) var(--space-xl);
-            background-color: var(--color-bg);
-            color: var(--color-primary);
+            background-image: url('./assets/img/menu/menu_header_inmersivo.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* Gradiente con peso hacia abajo: oscurece donde se apoya el texto
+               para asegurar contraste sin tapar del todo la imagen arriba. */
+            background: linear-gradient(
+                180deg,
+                rgba(28, 40, 48, 0.35) 0%,
+                rgba(28, 40, 48, 0.55) 60%,
+                rgba(28, 40, 48, 0.75) 100%
+            );
+            z-index: 1;
+        }
+
+        .menu-header__content {
+            position: relative;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             gap: var(--space-md);
             max-width: 640px;
+        }
+
+        /* El eyebrow va sobre imagen oscura: usamos el acento más claro,
+           igual que el eyebrow del hero. */
+        .menu-header__eyebrow {
+            color: var(--color-accent-soft);
         }
 
         .menu-header__title {
@@ -71,12 +109,12 @@
             font-size: var(--text-xl);
             font-weight: 600;
             line-height: 1.05;
-            color: var(--color-text-inverse);
+            color: var(--color-text);
         }
 
         .menu-header__desc {
             font-size: var(--text-base);
-            color: var(--color-text-muted);
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.7;
         }
 
@@ -87,11 +125,13 @@
             align-self: flex-start;
             padding: var(--space-xxs) var(--space-sm);
             border-radius: var(--radius-full);
-            background-color: var(--color-bg-alt);
-            border: 1px solid var(--color-border);
+            /* Pastilla oscura semitransparente con borde claro:
+               buen contraste sobre la imagen y aire "glass". */
+            background-color: rgba(28, 40, 48, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             font-size: var(--text-xs);
             font-weight: 600;
-            color: var(--color-text-muted);
+            color: var(--color-text);
         }
 
         .menu-header__dot {
@@ -391,13 +431,15 @@
     </nav>
 
     <header class="menu-header">
-        <span class="eyebrow eyebrow--accent">Nuestra Carta</span>
-        <h1 class="menu-header__title">Lo que servimos</h1>
-        <p class="menu-header__desc">Una selección preparada al momento con ingredientes de temporada y café tostado en pequeños lotes. Explora todo lo que tenemos para ti.</p>
-        <span class="menu-header__badge">
-            <span class="menu-header__dot" aria-hidden="true"></span>
-            Menú actualizado
-        </span>
+        <div class="menu-header__content">
+            <span class="eyebrow eyebrow--accent menu-header__eyebrow">Nuestra Carta</span>
+            <h1 class="menu-header__title">Lo que servimos</h1>
+            <p class="menu-header__desc">Una selección preparada al momento con ingredientes de temporada y café tostado en pequeños lotes. Explora todo lo que tenemos para ti.</p>
+            <span class="menu-header__badge">
+                <span class="menu-header__dot" aria-hidden="true"></span>
+                Menú actualizado
+            </span>
+        </div>
     </header>
 
     <nav class="menu-tabs" aria-label="Categorías del menú" role="tablist">
