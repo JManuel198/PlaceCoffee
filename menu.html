@@ -210,7 +210,7 @@
         .feat-card__img {
             flex-shrink: 0;
             width: 88px;
-            height: 88px;
+            height: 176px;
             object-fit: cover;
             border-radius: var(--radius-sm);
         }
@@ -400,12 +400,12 @@
         </span>
     </header>
 
-    <nav class="menu-tabs" aria-label="Categorías del menú">
-        <button type="button" class="menu-tabs__btn menu-tabs__btn--active">Cafés</button>
-        <button type="button" class="menu-tabs__btn">Té e Infusiones</button>
-        <button type="button" class="menu-tabs__btn">Smoothies</button>
-        <button type="button" class="menu-tabs__btn">Comidas</button>
-        <button type="button" class="menu-tabs__btn">Postres</button>
+    <nav class="menu-tabs" aria-label="Categorías del menú" role="tablist">
+        <button type="button" class="menu-tabs__btn menu-tabs__btn--active" data-target="cafes" role="tab" aria-selected="true">Cafés</button>
+        <button type="button" class="menu-tabs__btn" data-target="te" role="tab" aria-selected="false">Té e Infusiones</button>
+        <button type="button" class="menu-tabs__btn" data-target="smoothies" role="tab" aria-selected="false">Smoothies</button>
+        <button type="button" class="menu-tabs__btn" data-target="comidas" role="tab" aria-selected="false">Comidas</button>
+        <button type="button" class="menu-tabs__btn" data-target="postres" role="tab" aria-selected="false">Postres</button>
     </nav>
 
     <section class="cat" id="cafes">
@@ -734,5 +734,6 @@
         <a href="index.html" class="menu-cta__link">Volver al inicio</a>
     </footer>
 
+    <script src="./js/menu.js"></script>
 </body>
 </html>

@@ -27,3 +27,4 @@ navMobile.querySelectorAll('a').forEach(link => {
         navMobile.setAttribute('aria-hidden', 'true');
     });
 });
+
