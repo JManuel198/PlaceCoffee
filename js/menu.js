@@ -38,6 +38,21 @@ const observer = new IntersectionObserver((entries) => {
                 const active = tab.dataset.target === id
                 tab.classList.toggle('menu-tabs__btn--active', active)
                 tab.setAttribute('aria-selected', String(active))
+
+                if (active) {
+                    const barRect = tabBar.getBoundingClientRect()
+                    const tabRect = tab.getBoundingClientRect()
+                    const fullyVisible =
+                        tabRect.left >= barRect.left && tabRect.right <= barRect.right
+
+                    if (!fullyVisible) {
+                        tab.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'nearest',
+                            inline: 'center'
+                        })
+                    }
+                }
             })
         }
     })
